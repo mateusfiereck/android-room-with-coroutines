@@ -4,42 +4,54 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion versions.compileSdk
+	compileSdkVersion versions.compileSdk
 
-    defaultConfig {
-        applicationId "br.com.mateusfiereck.androidroomwithcoroutines"
+	defaultConfig {
+		applicationId "br.com.mateusfiereck.androidroomwithcoroutines"
 
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
+		minSdkVersion versions.minSdk
+		targetSdkVersion versions.targetSdk
 
-        versionCode 1
-        versionName "1.0"
+		versionCode 1
+		versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
 
-    implementation "androidx.appcompat:appcompat:${versions.androidx.appcompat}"
-    implementation "androidx.core:core-ktx:${versions.androidx.ktx}"
-    implementation "androidx.constraintlayout:constraintlayout:${versions.androidx.constraint}"
+	implementation "org.koin:koin-android:${versions.koin}"
+	implementation "org.koin:koin-android-viewmodel:${versions.koin}"
 
-    implementation "androidx.room:room-runtime:${versions.androidx.room}"
-    implementation "androidx.room:room-ktx:${versions.androidx.room}"
-    kapt "androidx.room:room-compiler:${versions.androidx.room}"
+	implementation "androidx.appcompat:appcompat:${versions.androidx.appcompat}"
+	implementation "androidx.core:core-ktx:${versions.androidx.ktx}"
+	implementation "androidx.constraintlayout:constraintlayout:${versions.androidx.constraint}"
 
-    testImplementation "junit:junit:4.12"
-    androidTestImplementation "androidx.test:runner:1.1.1"
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.1.1"
+	implementation "androidx.lifecycle:lifecycle-extensions:${versions.androidx.lifecycle}"
+	implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidx.lifecycle}"
+	kapt "androidx.lifecycle:lifecycle-compiler:${versions.androidx.lifecycle}"
+
+	implementation "androidx.room:room-runtime:${versions.androidx.room}"
+	implementation "androidx.room:room-ktx:${versions.androidx.room}"
+	kapt "androidx.room:room-compiler:${versions.androidx.room}"
+
+	implementation "androidx.navigation:navigation-fragment-ktx:${versions.androidx.navigation}"
+	implementation "androidx.navigation:navigation-ui-ktx:${versions.androidx.navigation}"
+
+	implementation "com.jakewharton.timber:timber:${versions.timber}"
+
+	testImplementation "junit:junit:4.12"
+	androidTestImplementation "androidx.test:runner:1.2.0"
+	androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
 }

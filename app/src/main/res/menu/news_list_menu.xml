@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/navigation_news_add"
+		android:icon="@drawable/ic_baseline_add"
+		android:menuCategory="secondary"
+		android:title="@string/title_add_news"
+		app:showAsAction="ifRoom" />
+</menu>

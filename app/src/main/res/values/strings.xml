@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Android Room with Coroutines</string>
+	<string name="app_name">Android Room with Coroutines</string>
+
+	<string name="title_add_news">Add News</string>
+
+	<string name="label_title">Title</string>
+	<string name="label_text">Text</string>
+
+	<string name="error_title">Title is required</string>
+	<string name="error_text">Text is required</string>
+
+	<string name="button_save">Save</string>
 </resources>
