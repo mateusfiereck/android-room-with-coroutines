@@ -8,6 +8,7 @@
 
 	<string name="error_title">Title is required</string>
 	<string name="error_text">Text is required</string>
+	<string name="error_inputs">Title and text are required</string>
 
 	<string name="button_save">Save</string>
 </resources>

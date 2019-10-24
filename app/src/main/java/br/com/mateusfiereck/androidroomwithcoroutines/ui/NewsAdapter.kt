@@ -9,7 +9,7 @@ import br.com.mateusfiereck.androidroomwithcoroutines.R
 import br.com.mateusfiereck.androidroomwithcoroutines.data.model.News
 import timber.log.Timber
 
-class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     private var news = emptyList<News>()
 
@@ -40,5 +40,4 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
             textNews.text = news.text
         }
     }
-
 }

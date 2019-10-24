@@ -1,6 +1,5 @@
 package br.com.mateusfiereck.androidroomwithcoroutines.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -15,30 +14,28 @@ import br.com.mateusfiereck.androidroomwithcoroutines.R
 import br.com.mateusfiereck.androidroomwithcoroutines.ext.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_news_list.*
 import org.koin.android.viewmodel.ext.android.sharedViewModel
-import timber.log.Timber
 
 class NewsListFragment : Fragment(R.layout.fragment_news_list) {
 
     private val viewModel: NewsViewModel by sharedViewModel()
-
     private val newsAdapter = NewsAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.d("onCreate")
-
         setupObservers()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Timber.d("onViewCreated")
-
         hideKeyboard()
-
         setHasOptionsMenu(true)
 
-        list_news.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+        list_news.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                DividerItemDecoration.VERTICAL
+            )
+        )
         list_news.adapter = newsAdapter
 
         viewModel.getNews()
@@ -49,12 +46,13 @@ class NewsListFragment : Fragment(R.layout.fragment_news_list) {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(findNavController()) || super.onOptionsItemSelected(item)
+        return item.onNavDestinationSelected(findNavController()) || super.onOptionsItemSelected(
+            item
+        )
     }
 
     private fun setupObservers() {
         viewModel.news.observe(this, Observer {
-            Timber.d("viewModel.news.observe")
             it?.let { listNews ->
                 newsAdapter.loadNews(listNews)
             }

@@ -17,11 +17,21 @@ android {
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 	}
+
 	buildTypes {
 		release {
 			minifyEnabled false
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+
+	kotlinOptions {
+		jvmTarget = "1.8"
 	}
 }
 
@@ -40,7 +50,6 @@ dependencies {
 
 	implementation "androidx.lifecycle:lifecycle-extensions:${versions.androidx.lifecycle}"
 	implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidx.lifecycle}"
-	kapt "androidx.lifecycle:lifecycle-compiler:${versions.androidx.lifecycle}"
 
 	implementation "androidx.room:room-runtime:${versions.androidx.room}"
 	implementation "androidx.room:room-ktx:${versions.androidx.room}"

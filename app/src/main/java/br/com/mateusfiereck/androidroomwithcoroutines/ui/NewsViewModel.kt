@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import br.com.mateusfiereck.androidroomwithcoroutines.data.model.News
 import br.com.mateusfiereck.androidroomwithcoroutines.data.repository.NewsRepository
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 class NewsViewModel(private val repository: NewsRepository) : ViewModel() {
 
@@ -21,7 +20,6 @@ class NewsViewModel(private val repository: NewsRepository) : ViewModel() {
 
     fun getNews() {
         viewModelScope.launch {
-            Timber.d("getNews: viewModelScope.launch")
             repository.getNews()
         }
     }

@@ -52,7 +52,7 @@
 			android:layout_height="wrap_content" />
 	</com.google.android.material.textfield.TextInputLayout>
 
-	<Button
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/bt_save"
 		style="@style/Widget.AppCompat.Button"
 		android:layout_width="0dp"
